@@ -6,11 +6,6 @@ struct Student{
 	float gpa;
 };
 
-void showStudent(struct Student* s){
-	printf("%s\n", s->name);
-	printf("%f\n", s->gpa);
-}
-
 int main(int argc, char const *argv[])
 {
 	
@@ -22,13 +17,11 @@ int main(int argc, char const *argv[])
 	float in_gpa;
 
 	// Get input while loop
-	while(scanf("%s", in_name)!=EOF){
-		if (scanf("%f", &in_gpa) != EOF){
-
+	while(scanf("%s %f", in_name, &in_gpa)!=EOF){
+		
 			// Make student struct
-			strcpy(students[size].name, in_name);
-			students[size].gpa = in_gpa;
-		}
+		strcpy(students[size].name, in_name);
+		students[size].gpa = in_gpa;
 
 		// Incriment size
 		size++;

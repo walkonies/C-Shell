@@ -27,7 +27,6 @@ int main(int argc, char const *argv[])
 		close(fd[1]);
 
 		// Exe command
-		//execlp("more", "more", NULL);
 		execvp("./sort", NULL);
 	}
 	// parent process
@@ -39,11 +38,9 @@ int main(int argc, char const *argv[])
 		close(fd[0]);
 
 		// Exe command
-		//execlp("ls", "ls", NULL);
 		execvp("./pre", NULL);
 
-		// Wait for child
-		wait(NULL);
+		exit(1);
 	}
 	return 0;
 }
